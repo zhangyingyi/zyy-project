@@ -7,7 +7,7 @@
                     <h3>{{product.title}}</h3>
                     <ul>
                         <li v-for="item in product.list">
-                            <a :href="item.url">{{item.name}}</a>
+                            <a :href="item.url" >{{item.name}}</a>
                             <span v-if="item.hot" class="hot-tag">HOT</span>
                         </li>
                     </ul>
@@ -17,14 +17,17 @@
             <div class="index-left-block lastest-news">
                 <h2>最新消息</h2>
                 <ul>
-                    <li v-for="item in newsList">
+                    <li v-for="item in newsList"> 
                         <a :href="item.url" class="new-item">{{ item.title }}</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="index-right">
-            <slide-show :slides="slides" :inv="invTime"></slide-show> 
+            <router-link :to="{path:'/detail'}">
+             <slide-show :slides="slides" :inv="invTime"></slide-show> 
+            </router-link>
+           
             <div class="index-board-list">
                 <div class="index-board-item" v-for="(item,index) in boardList" :class="[{'line-last':index%2!==0},'index-board-'+item.id]">
                     <div class="index-board-item-inner">
@@ -62,18 +65,23 @@ export default {
                 slides: [{
                     src: require('../assets/slideShow/1.jpg'),
                     title: 'xxx1',
+                    href: 'detail/analysis'
                  
                 }, {
                     src: require('../assets/slideShow/2.jpg'),
                     title: 'xxx2',
+                     href: 'detail/count'
                  
                 }, {
                     src: require('../assets/slideShow/3.jpg'),
                     title: 'xxx3',
+                    href: 'http://xxx.xxx.com'
                     
                 }, {
                     src: require('../assets/slideShow/4.jpg'),
                     title: 'xxx4',
+                    href: 'detail/forecast'
+
                  
                 }],
                 boardList: [{
