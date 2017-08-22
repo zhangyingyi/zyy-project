@@ -50,15 +50,15 @@ export default {
             'slideShow': slideShow
         },
 
-    // created:function(){
-    //  this.$http.post('getList',{userId:123})
-    //  .then(function(data){
-    //    console.log(data)
+    created:function(){
+     this.$http.post('getList',{userId:123})
+     .then(function(data){
+       console.log(data)
 
-    //  },function(err){
-    //    console.log(err)
-    //  })
-    // },
+     },function(err){
+       console.log(err)
+     })
+    },
     data() {
             return {
               invTime:1000,
